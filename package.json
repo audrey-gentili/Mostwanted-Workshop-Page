@@ -1,9 +1,9 @@
 {
   "name": "mostwanted-workshop-page",
   "private": false,
+  "homepage": "https://audreygentili.github.io/mostwanted-workshop-page",
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://audreygentili.github.io/mostwanted-workshop-page",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
