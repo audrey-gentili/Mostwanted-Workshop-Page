@@ -1,5 +1,4 @@
 import './App.css'
-import Link from './components/links/Links'
 import React from 'react'
 import Profiles from './components/Profiles/Profiles'
 
