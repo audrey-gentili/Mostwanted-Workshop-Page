@@ -1,0 +1,23 @@
+.speaker_profiles {
+  display: inline-flex;
+  gap: 40px;
+}
+
+.speaker_profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #646cff solid 2px;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+img {
+  width: 240px;
+  box-shadow: 5px 5px 5px #646cff;
+}
+
+.speaker_name {
+  display: flex;
+  gap: 8px;
+}
