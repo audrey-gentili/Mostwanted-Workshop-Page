@@ -6,11 +6,11 @@ function Links() {
     <div className="links">
       <Link
         link="https://github.com/olivierperez/workshop-MostWanted"
-        label="Atelier MostWanted"
+        label="L'Atelier"
       />
       <Link
         link="https://developer.android.com/develop/ui/compose/documentation"
-        label="Jetpack Compose documentation"
+        label="Documentation Jetpack Compose"
         variant="secondary"
       />
     </div>

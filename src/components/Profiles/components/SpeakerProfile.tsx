@@ -34,7 +34,7 @@ function SpeakerProfile({
           <img className="round_image" src={urlImage} />
         </div>
         <div className="details">
-          <div className="speaker_name">
+          <div>
             <p>{firstName}</p>
             <p>{lastName}</p>
           </div>
