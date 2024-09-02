@@ -12,74 +12,45 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --shadow-color: rgba(0, 170, 255, 0.4);
-}
+  --shadow-color: hsla(217, 90%, 61%, 0.3);
+  --shadow-color-secondary: rgba(55, 191, 112, 0.3);
 
-a {
-  font-weight: 500;
-  color: rgba(0, 170, 255);
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --shadow-color-card: 206deg 22% 58%;
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px
+      hsl(var(--shadow-color-card) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color-card) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color-card) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color-card) / 0.36);
 }
 
 body {
+  width: 100%;
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: radial-gradient(
+    ellipse 80% 50% at 50% 50%,
+    rgba(0, 170, 255, 0.3),
+    transparent
+  );
 }
 
 h1 {
-  font-size: 5em;
+  font-family: "Courier Prime", monospace;
+  font-weight: bold;
+  font-size: 8em;
+  font-weight: 900;
   line-height: 1.1;
-  color: rgba(0, 170, 255);
+  color: #4386f5;
+  background: linear-gradient(to right, #073042, #4386f5, #4386f5, #073042);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-button {
-  width: 400px;
-  color: #242424;
-  border-radius: 32px;
-  padding: 20px;
-  font-size: 1em;
-  font-weight: 700;
-  font-family: inherit;
-  background-color: white;
-  cursor: pointer;
-  transition: background-color 0.25s;
-  background-color: rgba(0, 170, 255);
-  color: white;
-  border: 3px solid rgba(0, 170, 255);
-  transition: all 0.2s;
-}
-
-button:hover {
-  --shadow-elevation-medium:
-    0.3px 0.5px 0.7px var(--shadow-color),
-    0.8px 1.6px 2px -0.8px var(--shadow-color),
-    2.1px 4.1px 5.2px -1.7px var(--shadow-color),
-    5px 10px 12.6px -2.5px var(--shadow-color);
-
-  box-shadow: var(--shadow-elevation-medium);
-  transition: all 0.2s;
-}
-
-button.secondary {
-  background-color: transparent;
-  color: rgba(0, 170, 255);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: rgba(0, 170, 255);
-  }
-  button {
-    background-color: #f9f9f9;
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 3rem;
   }
 }

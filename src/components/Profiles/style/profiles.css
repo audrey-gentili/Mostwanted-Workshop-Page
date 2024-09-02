@@ -1,91 +1,241 @@
+.agent_title {
+  font-family: "Special Elite", system-ui;
+  font-size: 2.3rem;
+  margin: 20px;
+  font-weight: bold;
+  color: #073042;
+}
+
 .speaker_profiles {
-  display: inline-flex;
-  gap: 20px;
-}
-
-.speaker_profile {
-  width: 500px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 4px solid black;
-  border-radius: 32px;
-}
-
-.header {
-  width: 100%;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 28px 28px 0 0;
-  font-weight: 900;
-  color: white;
-  background-color: rgb(248, 76, 76);
-}
+  flex-wrap: wrap;
+  gap: 3rem;
 
-.content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 30px;
-  gap: 60px;
-}
+  .speaker_profile {
+    width: 600px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: var(--shadow-elevation-medium);
 
-.round_image {
-  width: 120px;
-  border: 4px solid #242424;
-  border-radius: 50%;
-}
+    .right-panel {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background-color: #fafafa;
+      width: 40%;
+      height: 100%;
+      border-radius: 10px;
 
-.spy {
-  position: absolute;
-  transition: opacity 0.3s linear;
-}
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 100%;
+        margin: 2rem;
+        z-index: 2;
+        font-family: "Courier Prime", monospace;
+        font-weight: bold;
+        gap: 3rem;
 
-.speaker_profile:hover .spy {
-  opacity: 0;
-  transition: opacity 0.3s linear;
-}
+        .info {
+          display: flex;
+          align-items: flex-start;
+          gap: 1.5rem;
 
-.details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
+          .picture-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
 
-.speaker_name {
-  display: flex;
-  gap: 8px;
-}
+            .spy {
+              position: absolute;
+              transition: opacity 0.2s linear;
+            }
 
-p {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-}
+            .round_image {
+              width: 150px;
+              border: 5px solid #1b4c7ebf;
+              border-radius: 20%;
+            }
+          }
 
-a {
-  font-size: 20px;
-}
+          .details {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.2rem;
 
-.network_icons {
-  display: flex;
-  gap: 16px;
-}
+            p {
+              font-size: 2rem;
+              font-weight: 400;
+              font-weight: bolder;
+              color: white;
+              text-transform: lowercase;
 
-.network_icon {
-  width: 40px;
-}
+              span {
+                font-weight: bold;
+                margin-right: 0.3rem;
+                color: #073042;
+                text-transform: uppercase;
+                transition: opacity 0.2s linear;
 
-.network_icon:hover {
-  filter: drop-shadow(0 0 1em rgba(0, 170, 255));
-}
+                &.name {
+                  opacity: 0;
+                  transition: opacity 0.2s linear;
+                }
+              }
 
-.agent_title {
-  font-size: 28px;
-  margin: 20px;
-  font-weight: bold;
+              &.code-name {
+                span {
+                  font-size: 1.8rem;
+                  color: #747d86;
+                }
+              }
+            }
+
+            .labelName {
+              color: #37bf6f;
+            }
+
+            .placeholderName {
+              position: absolute;
+              color: #073042;
+            }
+          }
+        }
+
+        .footer {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .zenika-logo {
+            padding-left: 10px;
+            height: 40px;
+          }
+
+          .left-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            .badge {
+              background-color: #37bf6f;
+              padding: 0.1rem 0.8rem;
+              border-radius: 50px;
+
+              span {
+                font-weight: bolder;
+                color: white;
+              }
+            }
+
+            .network_icons {
+              display: flex;
+              align-self: flex-end;
+              gap: 20px;
+
+              .network_icon {
+                color: #0f516d;
+
+                &:hover {
+                  color: #0f516d;
+                  filter: drop-shadow(0 0 0.5em #4285f5);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .fingerprint {
+        position: absolute;
+        right: 1.5rem;
+        top: 2rem;
+        transform: rotate(10deg);
+        opacity: 0.7;
+        color: #1b4d7e;
+        z-index: 2;
+      }
+
+      .ciaLogo {
+        position: absolute;
+        left: 2rem;
+        top: 3rem;
+        width: 400px;
+        z-index: 0;
+        opacity: 0.1;
+      }
+    }
+
+    &:hover {
+      .right-panel {
+        .container {
+          .info {
+            .spy {
+              opacity: 0;
+              transition: opacity 0.2s linear;
+            }
+
+            .details {
+              p {
+                span {
+                  &.placeholderName {
+                    opacity: 0;
+                    transition: opacity 0.2s linear;
+                  }
+
+                  &.name {
+                    opacity: 1;
+                    transition: opacity 0.2s 0.1s linear;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .speaker_profile {
+      width: 90%;
+
+      .right-panel {
+        .container {
+          gap: 1rem;
+
+          .footer {
+            flex-direction: column;
+            gap: 1rem;
+
+            .left-side {
+              flex-direction: column;
+            }
+          }
+        }
+
+        .fingerprint {
+          display: none;
+        }
+
+        .ciaLogo {
+          top: 8rem;
+          width: 300px;
+        }
+      }
+    }
+  }
 }

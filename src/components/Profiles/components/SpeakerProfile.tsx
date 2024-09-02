@@ -1,13 +1,19 @@
 import React from "react";
 import "../style/profiles.css";
+import Networks from "./Networks";
+import { IoFingerPrintOutline } from "react-icons/io5";
+import Cia from "../../../assets/cia.png";
+import ZenikaLogo from "../../../assets/zenika.png";
 
 type Props = {
   firstName: string;
   lastName: string;
+  codeName: string;
   urlImage: string;
   githubLink: string;
   linkedinLink: string;
-  twitterLink: string;
+  twitterLink?: string;
+  mastodonLink?: string;
 };
 
 const spyUrlImage: string =
@@ -16,49 +22,64 @@ const spyUrlImage: string =
 function SpeakerProfile({
   firstName,
   lastName,
+  codeName,
   urlImage,
   githubLink,
   linkedinLink,
   twitterLink,
+  mastodonLink,
 }: Props) {
   return (
     <div className="speaker_profile">
-      <div className="header">
-        <p>CIA SECRET AGENT</p>
-      </div>
-      <div className="content">
-        <div className="spy">
-          <img className="round_image" src={spyUrlImage} />
-        </div>
-        <div className="speaker_image">
-          <img className="round_image" src={urlImage} />
-        </div>
-        <div className="details">
-          <div>
-            <p>{firstName}</p>
-            <p>{lastName}</p>
+      <div className="right-panel">
+        <div className="container">
+          <div className="info">
+            <div className="picture-container">
+              <div className="spy">
+                <img className="round_image" src={spyUrlImage} />
+              </div>
+              <div>
+                <img className="round_image" src={urlImage} />
+              </div>
+            </div>
+            <div className="details">
+              <p>
+                <span className="placeholderName">
+                  {"*".repeat(firstName.length)}
+                </span>
+                <span className="name">{firstName}</span>
+              </p>
+              <p>
+                <span className="placeholderName">
+                  {"*".repeat(lastName.length)}
+                </span>
+                <span className="name">{lastName}</span>
+              </p>
+              <p className="code-name">
+                <span className="placeholderName">
+                  {"*".repeat(codeName.length)}
+                </span>
+                <span className="name">{codeName}</span>
+              </p>
+            </div>
           </div>
-          <div className="network_icons">
-            <a target="_blank" href={githubLink}>
-              <img
-                className="network_icon"
-                src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+          <div className="footer">
+            <img src={ZenikaLogo} className="zenika-logo" />
+            <div className="left-side">
+              <div className="badge">
+                <span>Compose Expert</span>
+              </div>
+              <Networks
+                githubLink={githubLink}
+                linkedinLink={linkedinLink}
+                twitterLink={twitterLink}
+                mastodonLink={mastodonLink}
               />
-            </a>
-            <a target="_blank" href={linkedinLink}>
-              <img
-                className="network_icon"
-                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-              />
-            </a>
-            <a target="_blank" href={twitterLink}>
-              <img
-                className="network_icon"
-                src="https://cdn-icons-png.flaticon.com/256/5969/5969020.png"
-              />
-            </a>
+            </div>
           </div>
         </div>
+        <IoFingerPrintOutline size={150} className="fingerprint" />
+        <img src={Cia} className="ciaLogo" />
       </div>
     </div>
   );

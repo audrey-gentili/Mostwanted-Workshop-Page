@@ -1,9 +1,8 @@
 #root {
-  height: 100vh;
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 5rem auto 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
-  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(0, 170, 255, 0.2), transparent);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,28 +10,30 @@
 }
 
 .icon {
-  height: 10em;
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  transform: translate(50%,-50%);
+  max-height: 50%;
+  z-index: -1;
+  opacity: 0.2;
 }
 
 .card {
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+h2 {
+  font-family: "Special Elite", system-ui;
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #073042;
+  padding: 3rem 0;
+}
+
+@media screen and (max-width: 900px) {
+  h2 {
+    font-size: 1.5rem;
+  }
 }

@@ -10,7 +10,7 @@ function Links() {
       />
       <Link
         link="https://developer.android.com/develop/ui/compose/documentation"
-        label="Documentation Jetpack Compose"
+        label="Doc Jetpack Compose"
         variant="secondary"
       />
     </div>
