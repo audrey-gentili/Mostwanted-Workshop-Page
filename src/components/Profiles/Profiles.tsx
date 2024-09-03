@@ -20,7 +20,7 @@ function Profiles() {
           lastName="Gentili"
           codeName="Agent A"
           urlImage="https://pbs.twimg.com/profile_images/1784119539006873600/e2OXa-Mf_400x400.jpg"
-          githubLink="https://github.com/audreygentili"
+          githubLink="https://github.com/audrey-gentili"
           linkedinLink="https://www.linkedin.com/in/audrey-gentili/"
           twitterLink="https://twitter.com/audreygentili"
         />
